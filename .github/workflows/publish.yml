@@ -12,8 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        #ubuntu-20.04
-        platform: [windows-latest]
+        platform: [ubuntu-20.04, windows-latest]
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -59,3 +58,4 @@ jobs:
         with:
           name: my-artifact ${{ matrix.platform }}
           path: ${{ steps.bundlePath.outputs.value }}
+          retention-days: 1
