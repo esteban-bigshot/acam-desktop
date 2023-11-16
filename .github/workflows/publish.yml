@@ -50,7 +50,7 @@ jobs:
         id: bundlePath
         with:
           cond: ${{ matrix.platform == 'ubuntu-20.04'}}
-          if_true: ${{ github.workspace }}/**/release/bundle/*  
+          if_true: ${{ github.workspace }}/**/release/bundle/deb/*.deb
           if_false: ${{ github.workspace }}/**/release/bundle/msi/*.msi
 
       - name: Upload Artifacts
